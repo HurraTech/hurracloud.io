@@ -12,12 +12,16 @@ export const GlobalCss = withStyles(theme=>({
       border:'1px solid #eee !important',
       borderRadius:"0px  !important",
     },
+    ".MuiButton-label": {
+      textTransform:"none  !important",
+      fontWeight:600,
+      fontSize:'11pt'
+    },
   },
 }))(() => null);
 
 export default theme => ({
     root: {
-      display: 'flex',
       minHeight: '100vh',
       backgroundColor:"#fff"
     },
@@ -27,7 +31,7 @@ export default theme => ({
     logoEl: {
       backgroundImage:'url("/images/logo.svg")',
       backgroundRepeat: "no-repeat",
-      backgroundPosition:'center center',
+      backgroundPosition:'center left',
       backgroundSize: 'contain',
       height: 80,
       width:230 

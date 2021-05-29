@@ -81,7 +81,7 @@ export default function Layout({
     
     return (
         <div className={classes.root}>
-            <HurraAppBar onDrawerToggle={()=>setMobileOpen(!mobileOpen)}>
+            <HurraAppBar maxWidth={contentMaxWidth || "lg" } onDrawerToggle={()=>setMobileOpen(!mobileOpen)}>
                 {topNavItems}
             </HurraAppBar>
             {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
