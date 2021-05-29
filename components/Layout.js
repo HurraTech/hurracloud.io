@@ -100,9 +100,10 @@ export default function Layout({
             </Hidden>
             <main className={classes.mainContent} >
             <div className={classes.appBarPlaceholder} />
-            <Container maxWidth={contentMaxWidth || "lg" }>
+            {contentMaxWidth != "none" && <Container maxWidth={contentMaxWidth || "lg" }>
                 {children}
-            </Container>
+            </Container>}
+            {contentMaxWidth == "none" && <>{children}</>}
             </main>
         </div>
     );

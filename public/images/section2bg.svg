@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="781px" viewBox="0 0 1440 781" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Rectangle Copy 53</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="53.4382701%" y1="0.812861272%" x2="53.4382701%" y2="98.5729769%" id="linearGradient-1">
+            <stop stop-color="#4D5460" stop-opacity="0.05" offset="0%"></stop>
+            <stop stop-color="#2E6FBA" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Hurra-Landing-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page-V1" transform="translate(0.000000, -916.000000)" fill="url(#linearGradient-1)">
+            <g id="Background-Gradients" transform="translate(0.000000, 916.000000)">
+                <polygon id="Rectangle-Copy-53" transform="translate(720.000000, 396.796253) scale(-1, 1) translate(-720.000000, -396.796253) " points="-5.46312995e-12 106 1440 -1.13686838e-13 1440 646.164367 0 793.592505"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

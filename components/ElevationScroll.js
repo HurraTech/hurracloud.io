@@ -14,7 +14,7 @@ function ElevationScroll(props) {
     });
   
     return React.cloneElement(children, {
-      elevation: trigger ? 4 : 0,
+      elevation: trigger ? 1 : 0,
     });
 }
 ElevationScroll.propTypes = {

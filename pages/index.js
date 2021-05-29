@@ -1,44 +1,155 @@
-import { AppBar, Button, Grid, makeStyles, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Button, Card, Container, Grid, makeStyles, Paper, Toolbar, Typography } from '@material-ui/core'
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import { colorPallete } from '../styles/pallete'
 import styles from '../styles/styles'
 
 const useStyles = makeStyles(styles)
 export default function Home() {
   const classes = useStyles()
-
+  const features = [
+    [ {
+      "title" :"Secure Remote Access",
+      "description": "Access your cloud and data anywhere from your mobile via encrypted secure VPN to your Hurra Cloud at home",
+      "desktopSize": "50%"
+    },
+    {
+      "title" :"Decentralized App Marketplace",
+      "description": "Extend your Hurra Cloud power by adding additional apps hosted in your device. Apps provide additional services such as social networking, photos albums sync, password managers, cloud drive, private file sharing, smart home control,..etc",
+      "desktopSize": "50%"
+    }],
+    [
+    {
+      "title" :"Peer-to-peer Cloud",
+      "description": "HurraCloud devices can talk to each other directly without a middle man, eliminating any centeralized authority that can censor or eavesdrop on communication with your social network or friends.",
+      "desktopSize": "50%"
+    },
+    {
+      "title" :"Completely Open Source",
+      "description": "Hurra both device and software  is open source which means anyone can audit the code, contribute and even build the cloud from scratch",
+      "desktopSize": "50%"
+    }]
+  ]
   return (<>
-    <Layout>
-      <div style={{paddingTop:100}} />
+    <Layout contentMaxWidth="none">
+      {/* Section 1 */}
+      <Container maxWidth="lg">
+        <div style={{ paddingTop: 100 }} />
         {/* Section 1 / Desktop */}
         <div className={classes.sectionDesktop}>
-          <div style={{display:'flex',flexDirection:'row'}} >
-              <div style={{flex:1,paddingRight:90, paddingTop:50}} >
-                <Typography style={{fontWeight:800}} variant="h3">Decenteralizing the cloud</Typography>
-                <Typography style={{fontSize:'1.45em', color:"#333",marginTop:15}} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
-                <br/><br/>
-                <div style={{display:'flex',flexDirection:'row'}}>
-                  <Button style={{marginRight:10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-                  <Button color="secondary" variant="contained" disableElevation>Try a live demo</Button>
-                </div>
+          <div style={{ display: 'flex', flexDirection: 'row' }} >
+            <div style={{ flex: 1, paddingRight: 90, paddingTop: 50 }} >
+              <Typography style={{ fontWeight: 800 }} variant="h3">Decentralizing the cloud</Typography>
+              <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15 }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
+              <br /><br />
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <Button style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
+                <Button color="secondary" variant="contained" disableElevation>Try a live demo</Button>
               </div>
-              <img src="/images/main_scene.svg" style={{minWidth:"40vw", minHeight:430, maxHeight:"calc(100vh - 300px)", width:"auto"}} />
-          </div>
-      </div>
-      {/* Section 1 / Mobile */}
-      <div className={classes.sectionMobile}>
-        <div style={{display:'flex',flexDirection:'column',padding:'0px 10px'}}>
-            <img src="/images/main_scene.svg" style={{height:"auto", maxWidth:"100%"}} />
-            <Typography style={{fontWeight:800,marginTop:25,textAlign:'center'}} variant="h4">Decenteralizing the cloud</Typography>
-            <Typography style={{fontSize:'1.45em', color:"#333",marginTop:15,textAlign:'center'}} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
-            <br/><br/>
-            <div style={{display:'flex',flexDirection:'row', flex:1}} >
-              <Button style={{marginRight:10,flex:1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-              <Button style={{flex:1}} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
             </div>
+            <img src="/images/main_scene.svg" style={{ minWidth: "40vw", minHeight: 430, maxHeight: "calc(100vh - 300px)", width: "auto" }} />
+          </div>
         </div>
-      </div>
+        {/* End of Section 1 / Desktop */}
 
+        {/* Section 1 / Mobile */}
+        <div className={classes.sectionMobile}>
+          <div style={{ display: 'flex', flexDirection: 'column', padding: '0px 10px' }}>
+            <img src="/images/main_scene.svg" style={{ height: "auto", maxWidth: "100%" }} />
+            <Typography style={{ fontWeight: 800, marginTop: 25, textAlign: 'center' }} variant="h4">Decenteralizing the cloud</Typography>
+            <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15, textAlign: 'center' }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
+            <br /><br />
+            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }} >
+              <Button style={{ marginRight: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
+              <Button style={{ flex: 1 }} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
+            </div>
+          </div>
+        </div>
+        {/* End of Section 1 / Mobile */}
+      </Container>
+      {/* End of Section 1 */}
+
+      {/* Section 2 */}
+      <div style={{ marginTop:50, paddingTop: 100,  paddingBottom:200, backgroundImage: "url(/images/section2bg.svg)", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+        <Container maxWidth="lg">
+
+          {/* Section 2 / Desktop */}
+          <div className={classes.sectionDesktop}>
+            <div style={{ display: 'flex', flexDirection: 'row' }} >
+              <img src="/images/bedroom_scene.svg" style={{ minWidth: "40vw", minHeight: 430, maxHeight: "calc(100vh - 300px)", width: "auto" }} />
+              <div style={{ flex: 1, paddingLeft: 90, paddingTop: 50 }} >
+                <Typography style={{ fontWeight: 700 }} variant="h5">Privacy, Security and Custody of your data, under your control</Typography>
+                <Typography style={{ fontSize: '1.15em', color: "#333", marginTop: 15 }} >
+                  HurraCloud replaces traditional cloud platform (e.g. social networks) which own custody of your data in their data centers.
+                  <br />{" "}<br />
+                  Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
+                </Typography>
+                <br /><br />
+              </div>
+            </div>
+          </div>
+          {/* End of Section 2 / Desktop */}
+
+          {/* Section 2 / Mobile */}
+          <div className={classes.sectionMobile}>
+            <div style={{ display: 'flex', flexDirection: 'column', padding: '0px 10px' }}>
+              <img src="/images/bedroom_scene.svg" style={{ height: "auto", maxWidth: "100%" }} />
+              <Typography style={{ fontWeight: 700, marginTop: 55, textAlign: 'center' }} variant="h6">Privacy, Security and Custody of your data, under your control</Typography>
+              <Typography style={{ fontSize: '1.15em', color: "#333", marginTop: 15, textAlign: 'justified' }} >
+              HurraCloud replaces traditional cloud platform (e.g. social networks) which own custody of your data in their data centers.
+                  <br />{" "}<br />
+                  Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
+              </Typography>
+            </div>
+          </div>
+          {/* End of Section 2 / Mobile */}
+        </Container>
+      </div>
+      {/* End of Section 2 */}
+
+
+
+   {/* Section 3 */}
+   <div style={{ marginTop:-150, paddingTop: 150, backgroundImage: "url(/images/section3bg.svg)", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+        <Container maxWidth="lg">
+
+          {/* Section 3 / Desktop */}
+          <div className={classes.sectionDesktop}>
+            <div style={{width:'100%'}}>
+              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:20 }} variant="h5">Unlimited Power with a Scalable Ecosystem</Typography>
+                {features.map((featureRow,i)=> 
+                  <Grid key={i} container spacing={2} style={{marginTop:10,display:'table'}} alignItems="stretch" direction="row"> 
+                  {featureRow.map((feature,i)=> <Grid item  key={i}  xs={12} style={{height:'1px', display:'table-cell',"width": feature.desktopSize}}>
+                      <Paper className={classes.featureBox} style={{height:'100%'}}>
+                        <Typography style={{ color:colorPallete.hurra_red_light, paddingBottom:10, borderBottom:'1px solid #eee', fontWeight: 600,fontSize:"1.45em" }}>{feature.title}</Typography>
+                        <Typography style={{ fontWeight: 400,marginTop:10,fontSize:"1.2em" }}>{feature.description}</Typography>
+                      </Paper>
+                    </Grid>)}
+                </Grid>
+                )}
+            </div>
+          </div>
+          {/* End of Section 3 / Desktop */}
+
+          {/* Section 3 / Mobile */}
+          <div className={classes.sectionMobile}>
+            <div style={{width:'100%'}}>
+              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:20 }} variant="h5">Unlimited Power with a Scalable Ecosystem</Typography>
+              <Grid container spacing={2}> 
+                {features.flat().map((feature,i)=> <Grid key={i} item xs={12}>
+                    <Paper className={classes.featureBox}>
+                      <Typography style={{ color:colorPallete.hurra_red_light, paddingBottom:10, borderBottom:'1px solid #eee', fontWeight: 600,fontSize:"1.45em" }}>{feature.title}</Typography>
+                      <Typography style={{ fontWeight: 400,marginTop:10,fontSize:"1.2em" }}>{feature.description}</Typography>
+                    </Paper>
+                  </Grid>
+                )}
+              </Grid>
+            </div>
+          </div>
+          {/* End of Section 3 / Mobile */}
+        </Container>
+      </div>
+      {/* End of Section 3 */}
 
     </Layout>
 

@@ -1,5 +1,4 @@
-import { darken, fade, lighten, withStyles  } from '@material-ui/core/styles';
-import { lightBlue } from '@material-ui/core/colors';
+import { withStyles  } from '@material-ui/core/styles';
 import { colorPallete } from './pallete';
 
 export const drawerWidth = 300;
@@ -7,10 +6,11 @@ export const secondaryDrawerWidth = 350;
 
 export const GlobalCss = withStyles(theme=>({
   '@global': {
-    ".MuiPaper-elevation4": {
-      boxShadow:'0px 1px 4px #eee !important',
-      border:'1px solid #eee !important',
+    ".MuiPaper-root": {
       borderRadius:"0px  !important",
+    },
+    ".MuiPaper-elevation1": {
+      boxShadow:'0px 1px 4px #eee !important',
     },
     ".MuiButton-label": {
       textTransform:"none  !important",
@@ -82,8 +82,9 @@ export default theme => ({
         display: 'none',
       },
     },
-
-
+    featureBox: {
+      padding:15
+    },
     drawer: {
       zIndex:"1290 !important",
       // boxShadow:'1px 0px 2px #333 !important',
