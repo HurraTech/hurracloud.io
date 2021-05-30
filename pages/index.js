@@ -26,29 +26,32 @@ export default function Home() {
   }
 
 
-  const features = [
-    [ {
+  const features = [[
+    {
       "title" :"Secure Remote Access",
-      "description": "Access your cloud and data anywhere from your mobile via encrypted secure VPN to your Hurra Cloud at home",
-      "desktopSize": "50%"
+      "description": <span>Access your cloud and data anywhere from your mobile via <b>encrypted secure VPN</b> to your Hurra Cloud at home.</span>,
+      "desktopSize": "25%",
+      "image": "/images/vpn.png"
     },
     {
-      "title" :"Decentralized App Marketplace",
-      "description": "Extend your Hurra Cloud power by adding additional apps hosted in your device. Apps provide additional services such as social networking, photos albums sync, password managers, cloud drive, private file sharing, smart home control,..etc",
-      "desktopSize": "50%"
-    }],
-    [
+      "title" :"Extensible Apps Support",
+      "description": "Extend your Hurra Cloud power by adding additional apps from the decentralized marketplace. Apps provide additional services such as social networking, photos albums sync, password managers, cloud drive, private file sharing, smart home control,..etc",
+      "desktopSize": "25%",
+      "image": "/images/apps.png"
+    },
     {
       "title" :"Peer-to-peer Cloud",
       "description": "HurraCloud devices can talk to each other directly without a middle man, eliminating any centeralized authority that can censor or eavesdrop on communication with your social network or friends.",
-      "desktopSize": "50%"
+      "desktopSize": "25%",
+      "image": "/images/p2pcloud.png"
     },
     {
       "title" :"Completely Open Source",
-      "description": "Hurra both device and software  is open source which means anyone can audit the code, contribute and even build the cloud from scratch",
-      "desktopSize": "50%"
-    }]
-  ]
+      "description": "Both Hurra device and software are open source which means anyone can audit the code, the hardware, contribute and even build the cloud from source",
+      "desktopSize": "25%",
+      "image": "/images/opensource.png"
+    }
+  ]]
 
   return (<>
     <Layout contentMaxWidth="none">
@@ -146,13 +149,16 @@ export default function Home() {
           {/* Section 3 / Desktop */}
           <div className={classes.sectionDesktop}>
             <div style={{width:'100%'}}>
-              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:20 }} variant="h5">Unlimited Power with a Scalable Ecosystem</Typography>
+              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:30 }} variant="h5">A Scalable Ecosystem Designed for Privacy and Security</Typography>
                 {features.map((featureRow,i)=> 
-                  <Grid key={i} container spacing={2} style={{marginTop:10,display:'table'}} alignItems="stretch" direction="row"> 
-                  {featureRow.map((feature,i)=> <Grid item  key={i}  xs={12} style={{height:'1px', display:'table-cell',"width": feature.desktopSize}}>
+                  <Grid key={i} style={{height:"80%"}} container spacing={2}  alignItems="stretch" direction="row"> 
+                  {featureRow.map((feature,i)=> <Grid item  key={i}  xs={12} style={{height:'100%'}} md={3}>
                       <Paper className={classes.featureBox} style={{height:'100%'}}>
-                        <Typography style={{ color:colorPallete.hurra_red_light, paddingBottom:10, borderBottom:'1px solid #eee', fontWeight: 600,fontSize:"1.45em" }}>{feature.title}</Typography>
-                        <Typography style={{ fontWeight: 400,marginTop:10,fontSize:"1.2em" }}>{feature.description}</Typography>
+                        {feature.image && <div style={{padding:10,height:100,marginTop:5}} className={classes.centerVertical}>
+                          <img src={feature.image} style={{maxWidth:"90%"}} />
+                        </div>}
+                        <Typography style={{ color:colorPallete.hurra_red_light,marginTop:10, fontWeight: 800,fontSize:"1.25em" }}>{feature.title}</Typography>
+                        <Typography style={{ fontWeight: 400,marginTop:5, fontSize:"1.05em" }}>{feature.description}</Typography>
                       </Paper>
                     </Grid>)}
                 </Grid>
@@ -164,13 +170,16 @@ export default function Home() {
           {/* Section 3 / Mobile */}
           <div className={classes.sectionMobile}>
             <div style={{width:'100%'}}>
-              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:20 }} variant="h5">Unlimited Power with a Scalable Ecosystem</Typography>
+              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:20,textAlign:'center' }} variant="h6">A Scalable Ecosystem Designed for Privacy and Security</Typography>
               <Grid container spacing={2}> 
                 {features.flat().map((feature,i)=> <Grid key={i} item xs={12}>
-                    <Paper className={classes.featureBox}>
-                      <Typography style={{ color:colorPallete.hurra_red_light, paddingBottom:10, borderBottom:'1px solid #eee', fontWeight: 600,fontSize:"1.45em" }}>{feature.title}</Typography>
-                      <Typography style={{ fontWeight: 400,marginTop:10,fontSize:"1.2em" }}>{feature.description}</Typography>
-                    </Paper>
+                <Paper className={classes.featureBox} style={{height:'100%',textAlign:'center'}}>
+                        {feature.image && <div style={{padding:10,height:100,marginTop:5}} className={classes.centerHorizontal}>
+                          <img src={feature.image} style={{maxHeight:"100%"}} />
+                        </div>}
+                        <Typography style={{ color:colorPallete.hurra_red_light,marginTop:10, fontWeight: 800,fontSize:"1.25em" }}>{feature.title}</Typography>
+                        <Typography style={{ fontWeight: 400,marginTop:5, fontSize:"1.05em" }}>{feature.description}</Typography>
+                      </Paper>
                   </Grid>
                 )}
               </Grid>
