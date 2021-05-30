@@ -43,8 +43,8 @@ export default function Home() {
               <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15 }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
               <br /><br />
               <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <Button style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-                <Button color="secondary" variant="contained" disableElevation>Try a live demo</Button>
+                <Button size="large" style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
+                <Button size="large" color="secondary" variant="contained" disableElevation>Try a live demo</Button>
               </div>
             </div>
             <img src="/images/main_scene.svg" style={{ minWidth: "40vw", minHeight: 430, maxHeight: "calc(100vh - 300px)", width: "auto" }} />

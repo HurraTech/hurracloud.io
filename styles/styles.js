@@ -17,6 +17,12 @@ export const GlobalCss = withStyles(theme=>({
       fontWeight:600,
       fontSize:'11pt'
     },
+    ".MuiButton-sizeLarge": {
+      "&> .MuiButton-label": {
+        fontWeight:700,
+        fontSize:'13pt !important'
+      },  
+    }
   },
 }))(() => null);
 
