@@ -29,7 +29,7 @@ export default function Home() {
   const features = [[
     {
       "title" :"Secure Remote Access",
-      "description": <span>Access your cloud and data anywhere from your mobile via <b>encrypted secure VPN</b> to your Hurra Cloud at home.</span>,
+      "description": <span>Access your cloud and data anywhere from your mobile or computer via <b>encrypted secure VPN</b> to your Hurra Cloud at home.</span>,
       "desktopSize": "25%",
       "image": "/images/vpn.png"
     },
@@ -112,7 +112,7 @@ export default function Home() {
               <div style={{ flex: 1, paddingLeft: 90, paddingTop: 50 }} >
                 <Typography style={{ fontWeight: 700 }} variant="h5">Privacy, Security and Custody of your data, under your control</Typography>
                 <Typography style={{ fontSize: '1.15em', color: "#333", marginTop: 15 }} >
-                  HurraCloud replaces traditional cloud platforms (e.g. social networks, e-mail services,..etc) which own custody of your data in their data centers.
+                  HurraCloud replaces traditional cloud platforms (e.g. social networks,file hosting, e-mail services,..etc) which own custody of your data in their data centers.
                   <br />{" "}<br />
                   Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
                 </Typography>
