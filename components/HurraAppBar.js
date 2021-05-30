@@ -22,7 +22,7 @@ export default function HurraAppBar({ children, contentMaxWidth, onDrawerToggle 
         <ElevationScroll>
             <AppBar color="secondary" >
                     <Container maxWidth={contentMaxWidth || "lg" }>
-                        <Toolbar style={{paddingLeft:0,borderBottom:'1px solid #eee'}}>
+                        <Toolbar style={{paddingLeft:0,borderBottom:'0px solid #eee'}}>
                             <IconButton
                                 edge="start"
                                 onClick={onDrawerToggle}
