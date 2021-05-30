@@ -117,7 +117,7 @@ export default function Home() {
                   Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
                 </Typography>
                 <br /><br />
-                <Button onClick={playVideo} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation>Watch: Why traditional cloud is dangerous?</Button>
+                <Button onClick={playVideo} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
               </div>
             </div>
           </div>
