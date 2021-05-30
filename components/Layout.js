@@ -45,9 +45,6 @@ export default function Layout({
 
     const drawer = (
         <div>
-            <Typography  variant="h6" noWrap className={classNames(classes.logoContainer,classes.centerVertical)}>
-                <Link href="/" style={{flex:1}}><div className={classes.logoEl} /></Link>
-            </Typography>
             <List >
                 {navItems.map( ({ text, header, divider, Icon, id, badgeCount, onClick, color }, index) => <React.Fragment key={index}>
                     {(divider || header) && index != 0 &&<Divider style={{marginLeft:15, marginRight:15, marginTop:10, backgroundColor:"rgba(0,0,0,0.04)"}}/>}

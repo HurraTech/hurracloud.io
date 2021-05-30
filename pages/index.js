@@ -91,9 +91,9 @@ export default function Home() {
             <Typography style={{ fontWeight: 800, marginTop: 25, textAlign: 'center' }} variant="h4">Decenteralizing the cloud</Typography>
             <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15, textAlign: 'center' }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
             <br /><br />
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }} >
-              <Button style={{ marginRight: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-              <Button style={{ flex: 1 }} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
+            <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }} >
+              <Button size="large" style={{ marginBottom: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
+              <Button size="large" style={{ flex: 1 }} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
             </div>
           </div>
         </div>
@@ -143,13 +143,13 @@ export default function Home() {
 
 
    {/* Section 3 */}
-   <div style={{ marginTop:-150, paddingTop: 150, backgroundImage: "url(/images/section3bg.svg)", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+   <div style={{ marginTop:-200, paddingTop: 150, backgroundImage: "url(/images/section3bg.svg)", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
         <Container maxWidth="lg">
 
           {/* Section 3 / Desktop */}
           <div className={classes.sectionDesktop}>
             <div style={{width:'100%'}}>
-              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:30 }} variant="h5">A Scalable Ecosystem Designed for Privacy and Security</Typography>
+              <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:60 }} variant="h5">A Scalable Ecosystem Designed for Privacy and Security</Typography>
                 {features.map((featureRow,i)=> 
                   <Grid key={i} style={{height:"80%"}} container spacing={2}  alignItems="stretch" direction="row"> 
                   {featureRow.map((feature,i)=> <Grid item  key={i}  xs={12} style={{height:'100%'}} md={3}>
@@ -175,7 +175,7 @@ export default function Home() {
                 {features.flat().map((feature,i)=> <Grid key={i} item xs={12}>
                 <Paper className={classes.featureBox} style={{height:'100%',textAlign:'center'}}>
                         {feature.image && <div style={{padding:10,height:100,marginTop:5}} className={classes.centerHorizontal}>
-                          <img src={feature.image} style={{maxHeight:"100%"}} />
+                          <img src={feature.image} style={{maxHeight:"100%",maxWidth:"100%"}} />
                         </div>}
                         <Typography style={{ color:colorPallete.hurra_red_light,marginTop:10, fontWeight: 800,fontSize:"1.25em" }}>{feature.title}</Typography>
                         <Typography style={{ fontWeight: 400,marginTop:5, fontSize:"1.05em" }}>{feature.description}</Typography>
