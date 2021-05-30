@@ -1,5 +1,6 @@
-import { AppBar, Button, Card, Container, Grid, makeStyles, Paper, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Button, Card, Container, Grid, makeStyles, Modal, Paper, Toolbar, Typography } from '@material-ui/core'
 import Head from 'next/head'
+import { useState } from 'react'
 import Layout from '../components/Layout'
 import { colorPallete } from '../styles/pallete'
 import styles from '../styles/styles'
@@ -7,6 +8,24 @@ import styles from '../styles/styles'
 const useStyles = makeStyles(styles)
 export default function Home() {
   const classes = useStyles()
+  const [videoPlaying,setVideoPlaying] = useState(false)
+  
+  function playVideo() {
+    setVideoPlaying(true)
+    if (typeof window != "undefined") {
+      setTimeout(()=> document.getElementById("promoVideo").play(), 300)
+    }
+  }
+    
+  function closeVideo() {
+    if (typeof window != "undefined") {
+      document.getElementById("promoVideo").pause()
+    }
+    setVideoPlaying(false)
+
+  }
+
+
   const features = [
     [ {
       "title" :"Secure Remote Access",
@@ -30,8 +49,18 @@ export default function Home() {
       "desktopSize": "50%"
     }]
   ]
+
   return (<>
     <Layout contentMaxWidth="none">
+      {/* Video Popup */}
+      <Modal open={videoPlaying} className={classes.centerVertical} onClick={()=>closeVideo()}>
+        <div className={classes.centerHorizontal} style={{width:'100%'}}>
+          <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="promoVideo" preload>
+            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+          </video>
+        </div>
+      </Modal>
       {/* Section 1 */}
       <Container maxWidth="lg">
         <div style={{ paddingTop: 100 }} />
@@ -80,11 +109,12 @@ export default function Home() {
               <div style={{ flex: 1, paddingLeft: 90, paddingTop: 50 }} >
                 <Typography style={{ fontWeight: 700 }} variant="h5">Privacy, Security and Custody of your data, under your control</Typography>
                 <Typography style={{ fontSize: '1.15em', color: "#333", marginTop: 15 }} >
-                  HurraCloud replaces traditional cloud platform (e.g. social networks) which own custody of your data in their data centers.
+                  HurraCloud replaces traditional cloud platforms (e.g. social networks, e-mail services,..etc) which own custody of your data in their data centers.
                   <br />{" "}<br />
                   Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
                 </Typography>
                 <br /><br />
+                <Button onClick={playVideo} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation>Watch: Why traditional cloud is dangerous?</Button>
               </div>
             </div>
           </div>
