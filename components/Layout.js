@@ -33,6 +33,7 @@ export default function Layout({
 
     const navItems = [
         { text: 'Roadmap', id:"home", onClick:()=>{history.push("/roadmap")} },
+        { text: 'Ecosystem', id:"home", onClick:()=>{history.push("/ecosystem")} },
         { text: 'FAQ', id:"faq" },
         { text: 'About Us', id:"aboutus"},
         { text: 'Contact Us', id:"contact"},
