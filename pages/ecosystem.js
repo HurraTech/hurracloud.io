@@ -51,7 +51,7 @@ export default function Ecosystem() {
                 <Grid container spacing={2}>
                     {components.map((feature,i)=> <Grid key={i} md={feature.desktopSize} item xs={12}>
                         <Paper className={classes.featureBox} style={{height:'100%'}}>
-                            {feature.image && <div style={{padding:10,height:200,marginTop:5}} >
+                            {feature.image && <div style={{padding:10,height:feature.desktopSize > 6 ? 200 : 100,marginTop:5}} >
                             <img src={feature.image} style={{maxHeight:"100%"}} />
                             </div>}
                             <Typography style={{ color:colorPallete.hurra_red_light,marginTop:10, fontWeight: 800,fontSize:"1.25em" }}>{feature.title}</Typography>
