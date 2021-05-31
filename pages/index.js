@@ -173,7 +173,7 @@ export default function Home() {
               <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:20,textAlign:'center' }} variant="h6">A Scalable Ecosystem Designed for Privacy and Security</Typography>
               <Grid container spacing={2}> 
                 {features.flat().map((feature,i)=> <Grid key={i} item xs={12}>
-                <Paper className={classes.featureBox} style={{height:'100%',textAlign:'center'}}>
+                      <Paper className={classes.featureBox} style={{height:'100%',textAlign:'center'}}>
                         {feature.image && <div style={{padding:10,height:100,marginTop:5}} className={classes.centerHorizontal}>
                           <img src={feature.image} style={{maxHeight:"100%",maxWidth:"100%"}} />
                         </div>}
