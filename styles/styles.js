@@ -165,4 +165,10 @@ export default theme => ({
       }
     },
 
+    roadmapPhaseDescription: {
+      fontSize:"1.1em", 
+      fontWeight:500,
+      color:"#222"
+    }
+
 });

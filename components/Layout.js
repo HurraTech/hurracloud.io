@@ -17,7 +17,7 @@ import classNames from 'classnames';
 const useStyles = makeStyles(styles)
 
 export default function Layout({
-            title,
+         secondaryPage,
          contentMaxWidth, 
          highlightedPage, 
          children}) {
@@ -78,7 +78,7 @@ export default function Layout({
     
     return (
         <div className={classes.root}>
-            <HurraAppBar maxWidth={contentMaxWidth || "lg" } onDrawerToggle={()=>setMobileOpen(!mobileOpen)}>
+            <HurraAppBar showBorder={secondaryPage} maxWidth={contentMaxWidth || "lg" } onDrawerToggle={()=>setMobileOpen(!mobileOpen)}>
                 {topNavItems}
             </HurraAppBar>
             {/* The implementation can be swapped with js to avoid SEO duplication of links. */}

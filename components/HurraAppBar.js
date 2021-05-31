@@ -15,35 +15,35 @@ import { Container, CssBaseline } from '@material-ui/core';
 
 const useStyles = makeStyles(styles)
 
-export default function HurraAppBar({ children, contentMaxWidth, onDrawerToggle }) {
+export default function HurraAppBar({ children, showBorder, contentMaxWidth, onDrawerToggle }) {
     const classes = useStyles();
     const router = useRouter()
     return (<>
         <ElevationScroll>
             <AppBar color="secondary" >
-                    <Container maxWidth={contentMaxWidth || "lg" }>
-                        <Toolbar style={{paddingLeft:0,borderBottom:'0px solid #eee'}}>
-                            <IconButton
-                                edge="start"
-                                onClick={onDrawerToggle}
-                                className={classNames(classes.menuButton, classes.sectionMobile)}
-                                color="inherit"
-                                aria-label="open drawer"
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                            <div className={classNames(classes.logoContainer, classes.centerVertical)}>
-                                <EnhancedLink href="/" style={{ flex: 1 }}><div className={classes.logoEl} /></EnhancedLink>
+                <Container maxWidth={contentMaxWidth || "lg" }>
+                    <Toolbar style={{paddingLeft:0,borderBottom: (showBorder ? 1 : 0) +'px solid #eee'}}>
+                        <IconButton
+                            edge="start"
+                            onClick={onDrawerToggle}
+                            className={classNames(classes.menuButton, classes.sectionMobile)}
+                            color="inherit"
+                            aria-label="open drawer"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <div className={classNames(classes.logoContainer, classes.centerVertical)}>
+                            <EnhancedLink href="/" style={{ flex: 1 }}><div className={classes.logoEl} /></EnhancedLink>
+                        </div>
+                        <div className={classNames(classes.grow)}>
+                        </div>
+                        <div className={classes.sectionDesktop}>
+                            <div className={classes.centerVertical}>
+                                {children}
                             </div>
-                            <div className={classNames(classes.grow)}>
-                            </div>
-                            <div className={classes.sectionDesktop}>
-                                <div className={classes.centerVertical}>
-                                    {children}
-                                </div>
-                            </div>
-                            </Toolbar>
-                    </Container>
+                        </div>
+                        </Toolbar>
+                </Container>
             </AppBar>
         </ElevationScroll>        
     </>
