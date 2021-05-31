@@ -729,8 +729,8 @@
         <g id="Rectangle-2" transform="translate(872.000000, 561.000000)">
             <rect id="Rectangle" fill="#769250" x="0" y="0" width="167" height="138" rx="7"></rect>
             <rect id="Rectangle" fill="#BCCBA3" x="0" y="50" width="167" height="88" rx="5"></rect>
-            <text id="Anonymouse-Identity" font-family="NunitoSans-Bold, Nunito Sans" font-size="15" font-weight="bold" letter-spacing="0.102272731" fill="#FFFFFF">
-                <tspan x="9.14590905" y="20">Anonymouse Identity </tspan>
+            <text id="Anonymous-Identity-R" font-family="NunitoSans-Bold, Nunito Sans" font-size="15" font-weight="bold" letter-spacing="0.102272731" fill="#FFFFFF">
+                <tspan x="13.1795454" y="20">Anonymous Identity </tspan>
                 <tspan x="50.8547727" y="40">Resgistry</tspan>
             </text>
             <rect id="Rectangle" fill="#FFFFFF" opacity="0.704520089" x="8" y="64" width="149" height="18"></rect>
