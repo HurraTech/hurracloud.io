@@ -11,7 +11,7 @@ export default function Ecosystem() {
 
     const components = [
         {
-          "title" :"Hurra Anonymouse User Node",
+          "title" :"Hurra Anonymous User Node",
           "description": <span>Hurra user nodes are basically Hurra Devices which are hosted in user's homes. Those nodes host their owners personal data and not shared with the rest of the cloud. They can communicate with other nodes (e.g. user or developer/service nodes) by sending encrypted messages that can only be decrypted by the recepient. <br/><br/>They can also register some information on the blockchain such as public identities (e.g. nicknames), which will enable other users to find them.</span>,
           "desktopSize": 6,
           "image": "/images/hurradevice.svg"

@@ -696,10 +696,10 @@
             </g>
         </g>
         <text id="HurraCloud-Anonymous" font-family="NunitoSans-Bold, Nunito Sans" font-size="25" font-weight="bold" letter-spacing="0.170454552" fill="#424242">
-            <tspan x="134" y="45">HurraCloud Anonymouse User Nodes</tspan>
+            <tspan x="134" y="45">HurraCloud Anonymous User Nodes</tspan>
         </text>
-        <text id="HurraCloud-P2P-Servi" font-family="NunitoSans-Bold, Nunito Sans" font-size="25" font-weight="bold" letter-spacing="0.170454552" fill="#424242">
-            <tspan x="538.706818" y="889">HurraCloud P2P </tspan>
+        <text id="HurraCloud-Service/D" font-family="NunitoSans-Bold, Nunito Sans" font-size="25" font-weight="bold" letter-spacing="0.170454552" fill="#424242">
+            <tspan x="566.447727" y="889">HurraCloud </tspan>
             <tspan x="478.124174" y="923">Service</tspan>
             <tspan x="563.842356" y="923" font-family="LucidaGrande-Bold, Lucida Grande">/</tspan>
             <tspan x="578.148553" y="923">Developers Nodes</tspan>
