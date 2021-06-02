@@ -37,7 +37,7 @@ export default function Ecosystem() {
       ]
 
       
-    return <Layout contentMaxWidth="none" secondaryPage={true}>
+    return <Layout highlightedPage="ecosystem"  contentMaxWidth="none" secondaryPage={true}>
         <Container maxWidth="md">
             <Typography variant="h3" style={{textAlign:'center', fontWeight:700,padding:10, marginTop:50, width:"100%"}}>
                 Hurra P2P Cloud Ecysostem

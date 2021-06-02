@@ -1,6 +1,7 @@
 import { AppBar, Button, Card, Container, Grid, makeStyles, Modal, Paper, Toolbar, Typography } from '@material-ui/core'
 import Head from 'next/head'
 import { useState } from 'react'
+import EnhancedLink from '../components/EnhancedLink'
 import Layout from '../components/Layout'
 import { colorPallete } from '../styles/pallete'
 import styles from '../styles/styles'
@@ -58,10 +59,11 @@ export default function Home() {
       {/* Video Popup */}
       <Modal open={videoPlaying} className={classes.centerVertical} onClick={()=>closeVideo()}>
         <div className={classes.centerHorizontal} style={{width:'100%'}}>
-          <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="promoVideo" preload>
-            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
-          </video>
+            <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="promoVideo" preload>
+              <source src="https://v.kickstarter.com/1622764190_584232c4aec4bb130a9b7a170e6e2c4cfef84d9c/projects/4178746/video-1108583-hls_playlist.m3u8" type="application/x-mpegURL"/>
+              <source src="https://v.kickstarter.com/1622764190_584232c4aec4bb130a9b7a170e6e2c4cfef84d9c/projects/4178746/video-1108583-h264_high.mp4" type="video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;"/>
+              <source src="https://v.kickstarter.com/1622764190_584232c4aec4bb130a9b7a170e6e2c4cfef84d9c/projects/4178746/video-1108583-h264_base.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" />         
+            </video>
         </div>
       </Modal>
       {/* Section 1 */}
@@ -72,11 +74,13 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'row' }} >
             <div style={{ flex: 1, paddingRight: 90, paddingTop: 50 }} >
               <Typography style={{ fontWeight: 800 }} variant="h3">Decentralizing the cloud</Typography>
-              <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15 }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
+              <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15 }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control.</Typography>
               <br /><br />
               <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <Button size="large" style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-                <Button size="large" color="secondary" variant="contained" disableElevation>Try a live demo</Button>
+                <Button
+                  href="https://www.kickstarter.com/projects/hurracloud/1096069573"
+                   size="large" style={{ flex:1, marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
+                <Button style={{flex:1,}} href="https://demo.hurracloud.io/" size="large" color="secondary" variant="contained" disableElevation>See a live demo</Button>
               </div>
             </div>
             <img src="/images/main_scene.svg" style={{ minWidth: "40vw", minHeight: 430, maxHeight: "calc(100vh - 300px)", width: "auto" }} />
@@ -92,8 +96,9 @@ export default function Home() {
             <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15, textAlign: 'center' }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
             <br /><br />
             <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }} >
-              <Button size="large" style={{ marginBottom: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-              <Button size="large" style={{ flex: 1 }} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
+              <Button href="https://www.kickstarter.com/projects/hurracloud/1096069573"
+                size="large" style={{ marginBottom: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
+              <Button href="https://demo.hurracloud.io/" size="large" style={{ flex: 1 }} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
             </div>
           </div>
         </div>
@@ -133,6 +138,9 @@ export default function Home() {
                   <br />{" "}<br />
                   Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
               </Typography>
+              <br /><br />
+              <Button onClick={playVideo} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
+
             </div>
           </div>
           {/* End of Section 2 / Mobile */}
@@ -151,7 +159,7 @@ export default function Home() {
             <div style={{width:'100%'}}>
               <Typography style={{ paddingTop:50, fontWeight: 700, marginBottom:60 }} variant="h5">A Scalable Ecosystem Designed for Privacy and Security</Typography>
                 {features.map((featureRow,i)=> 
-                  <Grid key={i} style={{height:"80%"}} container spacing={2}  alignItems="stretch" direction="row"> 
+                  <Grid key={i} style={{height:"70%"}} container spacing={2}  alignItems="stretch" direction="row"> 
                   {featureRow.map((feature,i)=> <Grid item  key={i}  xs={12} style={{height:'100%'}} md={3}>
                       <Paper className={classes.featureBox} style={{height:'100%'}}>
                         {feature.image && <div style={{padding:10,height:100,marginTop:5}} className={classes.centerVertical}>
@@ -163,6 +171,8 @@ export default function Home() {
                     </Grid>)}
                 </Grid>
                 )}
+                <Button href="/ecosystem" component={EnhancedLink} style={{ marginTop: 30 }} color="primary" variant="contained" disableElevation>Learn more about Hurra cloud ecosystem</Button>
+                <br/><br/><br/><br/>
             </div>
           </div>
           {/* End of Section 3 / Desktop */}
@@ -183,6 +193,9 @@ export default function Home() {
                   </Grid>
                 )}
               </Grid>
+              <Button href="/ecosystem" component={EnhancedLink} style={{ marginTop: 30,width:'100%' }} color="primary" variant="contained" disableElevation>Learn more about Hurra cloud ecosystem</Button>
+                <br/><br/><br/><br/>
+
             </div>
           </div>
           {/* End of Section 3 / Mobile */}

@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 import styles from '../styles/styles';
 import HurraAppBar from './HurraAppBar';
 import classNames from 'classnames';
+import EnhancedLink from './EnhancedLink';
 
 const useStyles = makeStyles(styles)
 
@@ -32,14 +33,13 @@ export default function Layout({
 
 
     const navItems = [
-        { text: 'Roadmap', id:"home", onClick:()=>{history.push("/roadmap")} },
-        { text: 'Ecosystem', id:"home", onClick:()=>{history.push("/ecosystem")} },
-        { text: 'FAQ', id:"faq" },
-        { text: 'About Us', id:"aboutus"},
-        { text: 'Contact Us', id:"contact"},
+        { text: 'Roadmap', id:"roadmap", link:"/roadmap" },
+        { text: 'Ecosystem', id:"ecosystem", link:"/ecosystem" },
+        { text: 'About Us', id:"about", link:"/about" },
+        { text: 'Contact Us', id:"contact", link:"mailto:contact@hurratech.com" },
         {divider:true},
-        { text: 'Back us on Kickstarter', variant:"contained", color:"primary", id:"kickstarter", onClick:()=>{history.push("/orders")}}, 
-        { text: 'Github Repo', justIcon:true, id:"github",  Icon: GithubIcon, onClick:()=>{history.push("/account")}},
+        { text: 'Back us on Kickstarter', variant:"contained", color:"primary", id:"kickstarter", link:"https://www.kickstarter.com/projects/hurracloud/1096069573" }, 
+        // { text: 'Github Repo', justIcon:true, id:"github",  Icon: GithubIcon, onClick:()=>{history.push("/account")}},
 
     ]
     
@@ -47,10 +47,11 @@ export default function Layout({
     const drawer = (
         <div>
             <List >
-                {navItems.map( ({ text, header, divider, Icon, id, badgeCount, onClick, color }, index) => <React.Fragment key={index}>
+                {navItems.map( ({ text, header, divider, Icon, id, link, color }, index) => <React.Fragment key={index}>
                     {(divider || header) && index != 0 &&<Divider style={{marginLeft:15, marginRight:15, marginTop:10, backgroundColor:"rgba(0,0,0,0.04)"}}/>}
                     {!divider && <ListItem button={!header}
-                        onClick={onClick}
+                        href={link}
+                        component={EnhancedLink} 
                         className={classNames(classes.drawerListItem, {[classes.highlightedDrawerItem]: !header && (highlightedPage == id )})}>
                         {Icon != null && <ListItemIcon className={classes.drawerIconWrapper}>
                                 <Icon className={classNames(classes.drawerIcon,{[classes.primaryColor]:color=="primary" })} />
@@ -63,12 +64,12 @@ export default function Layout({
       );
       
     const topNavItems = <>
-        {navItems.map( ({ text, divider, Icon, justIcon, variant, onClick, color }, index) => <React.Fragment key={index}>
+        {navItems.map( ({ id,text, divider, Icon, justIcon, variant, link, color }, index) => <React.Fragment key={index}>
             {divider && <div className={classes.topNavDivider} />}
             {!divider && <div>
-                {!justIcon? <Button variant={variant} color={color} onClick={onClick} className={classes.topNavButton}>
-                    {text}
-                </Button>: <IconButton onClick={onClick} className={classes.topNavIconButton}>
+                {!justIcon? <Button href={link}  component={EnhancedLink} variant={variant} color={color} className={classes.topNavButton}>
+                    {highlightedPage == id ? <b>{text}</b> : text}
+                </Button>: <IconButton href={link}  component={EnhancedLink}  onClick={onClick} className={classes.topNavIconButton}>
                     <Icon className={classNames({[classes.primaryColor]:color=="primary" })} />
                 </IconButton>
                 }

@@ -62,7 +62,7 @@ export default function Roadmap() {
             "👨‍💻 Users will be able to use their Hurra Tokens to purchase apps from the store"
         ]
     }]
-    return <Layout contentMaxWidth="none" secondaryPage={true}>
+    return <Layout highlightedPage="roadmap" contentMaxWidth="none" secondaryPage={true}>
         <Container maxWidth="md">
             <Typography variant="h3" style={{textAlign:'center', fontWeight:700,padding:10, marginTop:50, width:"100%"}}>
                 Launch Roadmap

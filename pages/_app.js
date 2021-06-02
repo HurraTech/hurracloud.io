@@ -29,8 +29,16 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>My page</title>
+        <title>Hurra Cloud: A decentralized P2P cloud</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7H1DHGDRR"></script>
+          <script dangerouslySetInnerHTML={{ __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-G7H1DHGDRR');
+            `}} />
       </Head>
     <ThemeProvider theme={theme}>
         <CssBaseline />
