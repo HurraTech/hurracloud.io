@@ -95,7 +95,7 @@ export default function Home() {
             <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15, textAlign: 'center' }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
             <br /><br />
             <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }} >
-              <Button href="https://www.kickstarter.com/projects/hurracloud/1096069573"
+              <Button href="https://www.kickstarter.com/projects/hurracloud/hurracloud-your-own-private-cloud"
                 size="large" style={{ marginBottom: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
               <Button href="https://demo.hurracloud.io/" size="large" style={{ flex: 1 }} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
             </div>
