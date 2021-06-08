@@ -24,10 +24,11 @@ export default function AboutUs() {
                 Our mission is to create new decentralized peer-to-peer cloud which protects the privacy of users personal data and remove the custody of any centeral authority. Watch the video play to learn more about our mission.
             </Typography>
             <div variant="h6" style={{position:'relative', marginTop:15, textAlign:"center"}}>
-                <video id="missionVideo" style={{display: "inline"}} poster="https://ksr-ugc.imgix.net/assets/033/688/284/be9bb2cb32c496e260fae7ace100bcb3_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1622217357&auto=format&frame=1&lossless=true&s=f575d63645a333ae3274196806372486" controls data-vscid="ak6xbo30c" >
-                    <source src="https://v.kickstarter.com/1622763396_543ed981db4916498a7c5b60bc42b74b66a00db6/assets/033/727/068/324d33a29721c69190856717aaff0bec_h264_high.mp4" type="video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;" />
-                    <source src="https://v.kickstarter.com/1622763396_543ed981db4916498a7c5b60bc42b74b66a00db6/assets/033/727/068/324d33a29721c69190856717aaff0bec_h264_base.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" />
+                <video id="missionVideo"  style={{maxWidth: 700, width:"100vw", }} controls data-vscid="ak6xbo30c" poster="https://drive.google.com/uc?export=download&id=1WCnUMVrPJKOlJ-fubHj-8taSQ32Ce92d">
+                    <source src="https://www.googleapis.com/drive/v3/files/1C5Sh8-9j8RV35PksIwpedneiFKfNpLHv?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4"/>
+                    <source src="https://www.googleapis.com/drive/v3/files/1C5Sh8-9j8RV35PksIwpedneiFKfNpLHv?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
                 </video>
+
                 {!isVideoPlaying && <IconButton onClick={()=>playVideo()} style={{  position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)"}} ><PlayIcon style={{ width:100,height:100}} /> </IconButton>}
             </div>
         </Container>

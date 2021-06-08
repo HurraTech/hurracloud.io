@@ -60,9 +60,8 @@ export default function Home() {
       <Modal open={videoPlaying} className={classes.centerVertical} onClick={()=>closeVideo()}>
         <div className={classes.centerHorizontal} style={{width:'100%'}}>
             <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="promoVideo" preload>
-              <source src="https://v.kickstarter.com/1622764190_584232c4aec4bb130a9b7a170e6e2c4cfef84d9c/projects/4178746/video-1108583-hls_playlist.m3u8" type="application/x-mpegURL"/>
-              <source src="https://v.kickstarter.com/1622764190_584232c4aec4bb130a9b7a170e6e2c4cfef84d9c/projects/4178746/video-1108583-h264_high.mp4" type="video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;"/>
-              <source src="https://v.kickstarter.com/1622764190_584232c4aec4bb130a9b7a170e6e2c4cfef84d9c/projects/4178746/video-1108583-h264_base.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" />         
+              <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
+              <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
             </video>
         </div>
       </Modal>
