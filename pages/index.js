@@ -78,7 +78,7 @@ export default function Home() {
               <br /><br />
               <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <Button
-                  href="https://www.kickstarter.com/projects/hurracloud/1096069573"
+                  href="https://www.kickstarter.com/projects/hurracloud/hurracloud-your-own-private-cloud"
                    size="large" style={{ flex:1, marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
                 <Button style={{flex:1,}} href="https://demo.hurracloud.io/" size="large" color="secondary" variant="contained" disableElevation>See a live demo</Button>
               </div>

@@ -47,16 +47,16 @@ export default function Layout({
     const drawer = (
         <div>
             <List >
-                {navItems.map( ({ text, header, divider, Icon, id, link, color }, index) => <React.Fragment key={index}>
+                {navItems.map( ({ text, header, divider, Icon, justIcon, id, link, color }, index) => <React.Fragment key={index}>
                     {(divider || header) && index != 0 &&<Divider style={{marginLeft:15, marginRight:15, marginTop:10, backgroundColor:"rgba(0,0,0,0.04)"}}/>}
                     {!divider && <ListItem button={!header}
                         href={link}
-                        component={EnhancedLink} 
+                        component={justIcon? "li": EnhancedLink} 
                         className={classNames(classes.drawerListItem, {[classes.highlightedDrawerItem]: !header && (highlightedPage == id )})}>
                         {Icon != null && <ListItemIcon className={classes.drawerIconWrapper}>
                                 <Icon className={classNames(classes.drawerIcon,{[classes.primaryColor]:color=="primary" })} />
                         </ListItemIcon>}
-                        <ListItemText className={classNames(classes.drawerItemText,{[classes.primaryColor]:color=="primary", [classes.drawerItemTextHeader]: header != null })} primary={text || header} />
+                        {!justIcon && <ListItemText className={classNames(classes.drawerItemText,{[classes.primaryColor]:color=="primary", [classes.drawerItemTextHeader]: header != null })} primary={text || header} />}
                     </ListItem>}
                 </React.Fragment >)}
             </List>
@@ -84,7 +84,7 @@ export default function Layout({
                 {topNavItems}
             </HurraAppBar>
             {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-            <Hidden smUp implementation="js">
+            <Hidden mdUp implementation="js">
                 <Drawer
                     variant="temporary"
                     anchor="left"
