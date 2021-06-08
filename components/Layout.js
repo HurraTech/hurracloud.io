@@ -39,7 +39,7 @@ export default function Layout({
         { text: 'Contact Us', id:"contact", link:"mailto:contact@hurratech.com" },
         {divider:true},
         { text: 'Back us on Kickstarter', variant:"contained", color:"primary", id:"kickstarter", link:"https://www.kickstarter.com/projects/hurracloud/1096069573" }, 
-        // { text: 'Github Repo', justIcon:true, id:"github",  Icon: GithubIcon, onClick:()=>{history.push("/account")}},
+        { text: 'Github Repo', justIcon:true, id:"github",  Icon: GithubIcon, onClick:()=>{window.open("https://github.com/HurraTech", '_blank').focus()}},
 
     ]
     
@@ -64,12 +64,12 @@ export default function Layout({
       );
       
     const topNavItems = <>
-        {navItems.map( ({ id,text, divider, Icon, justIcon, variant, link, color }, index) => <React.Fragment key={index}>
+        {navItems.map( ({ id,text, divider, Icon, justIcon, variant, link, color, onClick }, index) => <React.Fragment key={index}>
             {divider && <div className={classes.topNavDivider} />}
             {!divider && <div>
                 {!justIcon? <Button href={link}  component={EnhancedLink} variant={variant} color={color} className={classes.topNavButton}>
                     {highlightedPage == id ? <b>{text}</b> : text}
-                </Button>: <IconButton href={link}  component={EnhancedLink}  onClick={onClick} className={classes.topNavIconButton}>
+                </Button>: <IconButton href={link}  onClick={onClick} className={classes.topNavIconButton}>
                     <Icon className={classNames({[classes.primaryColor]:color=="primary" })} />
                 </IconButton>
                 }
