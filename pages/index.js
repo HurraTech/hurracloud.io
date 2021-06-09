@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import { colorPallete } from '../styles/pallete'
 import styles from '../styles/styles'
 import PlayIcon from '@material-ui/icons/PlayCircleFilled'
+import YouTube from 'react-youtube'
 
 const useStyles = makeStyles(styles)
 export default function Home() {
@@ -14,13 +15,13 @@ export default function Home() {
 
   function playVideo(videoId) {
     setVideoPlaying(videoId)
-    if (typeof window != "undefined") {
+    if (typeof window != "undefined" && videoId == "promoVideo") {
       setTimeout(()=> document.getElementById("videoEl").play(), 300)
     }
   }
     
   function closeVideo() {
-    if (typeof window != "undefined") {
+    if (typeof window != "undefined" && document.getElementById("videoEl") != undefined) {
       document.getElementById("videoEl").pause()
     }
     setVideoPlaying(null)
@@ -54,15 +55,21 @@ export default function Home() {
     }
   ]]
 
+  const opts = {
+    height: '490',
+    width: '800',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
   return (<>
     <Layout contentMaxWidth="none">
       {/* Video Popup */}
       <Modal open={videoPlaying} className={classes.centerVertical} onClick={()=>closeVideo()}>
       <div className={classes.centerHorizontal} style={{width:'100%'}}>
-        {videoPlaying == "cloudRiskVideo" && <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
-              <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
-              <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
-            </video>}
+        {videoPlaying == "cloudRiskVideo" && <YouTube opts={opts} videoId={"F-bHm71nVzc"} />}
         {videoPlaying == "promoVideo" &&<video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
               <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
               <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
