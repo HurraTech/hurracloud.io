@@ -59,11 +59,11 @@ export default function Home() {
       {/* Video Popup */}
       <Modal open={videoPlaying} className={classes.centerVertical} onClick={()=>closeVideo()}>
       <div className={classes.centerHorizontal} style={{width:'100%'}}>
-        {videoPlaying == "cloudRiskVideo" && <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
+        {videoPlaying == "cloudRiskVideo" && <video controls autoPlay playsInline style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
               <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
               <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
             </video>}
-        {videoPlaying == "promoVideo" &&<video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
+        {videoPlaying == "promoVideo" &&<video controls playsInline autoPlay style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
               <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
               <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
             </video>}

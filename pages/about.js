@@ -24,7 +24,7 @@ export default function AboutUs() {
                 Our mission is to create new decentralized peer-to-peer cloud which protects the privacy of users personal data and remove the custody of any centeral authority. Watch the video play to learn more about our mission.
             </Typography>
             <div variant="h6" style={{position:'relative', marginTop:15, textAlign:"center"}}>
-                <video id="missionVideo"  style={{maxWidth: 700, width:"100vw", }} controls data-vscid="ak6xbo30c" poster="https://drive.google.com/uc?export=download&id=1WCnUMVrPJKOlJ-fubHj-8taSQ32Ce92d">
+                <video id="missionVideo"  style={{maxWidth: 700, width:"100vw", }} controls playsInline poster="https://drive.google.com/uc?export=download&id=1WCnUMVrPJKOlJ-fubHj-8taSQ32Ce92d">
                     <source src="https://www.googleapis.com/drive/v3/files/1C5Sh8-9j8RV35PksIwpedneiFKfNpLHv?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4"/>
                     <source src="https://www.googleapis.com/drive/v3/files/1C5Sh8-9j8RV35PksIwpedneiFKfNpLHv?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
                 </video>
