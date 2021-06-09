@@ -127,7 +127,6 @@ export default function Home() {
           <div className={classes.sectionDesktop}>
             <div style={{ display: 'flex', flexDirection: 'row' }} >
               <img src="/images/bedroom_scene.svg" style={{ minWidth: "40vw", minHeight: 430, maxHeight: "calc(100vh - 300px)", width: "auto" }} />
-              <Button onClick={()=>playVideo("cloudRiskVideo")} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
               <div style={{ flex: 1, paddingLeft: 90, paddingTop: 50 }} >
                 <Typography style={{ fontWeight: 700 }} variant="h5">Privacy, Security and Custody of your data, under your control</Typography>
                 <Typography style={{ fontSize: '1.15em', color: "#333", marginTop: 15 }} >
