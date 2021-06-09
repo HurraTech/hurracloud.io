@@ -1,10 +1,12 @@
-import { AppBar, Button, Card, Container, Grid, IconButton, makeStyles, Modal, Paper, Toolbar, Typography } from '@material-ui/core'
+import { Hidden, AppBar, Button, Card, Container, Grid, IconButton, makeStyles, Modal, Paper, Toolbar, Typography } from '@material-ui/core'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import Layout from '../components/Layout'
 import { colorPallete } from '../styles/pallete'
 import styles from '../styles/styles'
 import PlayIcon from '@material-ui/icons/PlayCircleFilled'
+import YouTube from 'react-youtube'
+
 const useStyles = makeStyles(styles)
 export default function AboutUs() {
     const classes = useStyles()
@@ -15,6 +17,24 @@ export default function AboutUs() {
         document.getElementById("missionVideo").play()
     }
 
+    const optsLg = {
+        height: '390',
+        width: '600',
+        playerVars: {
+          // https://developers.google.com/youtube/player_parameters
+          autoplay: 0,
+        },
+      };
+
+    const optsSm = {
+        height: '195',
+        width: '300',
+        playerVars: {
+          // https://developers.google.com/youtube/player_parameters
+          autoplay: 0,
+        },
+      };
+
     return <Layout highlightedPage="about"  contentMaxWidth="none" secondaryPage={true}>
         <Container maxWidth="md">
             <Typography variant="h3" style={{textAlign:'center', fontWeight:700,padding:10, marginTop:50, width:"100%"}}>
@@ -24,12 +44,13 @@ export default function AboutUs() {
                 Our mission is to create new decentralized peer-to-peer cloud which protects the privacy of users personal data and remove the custody of any centeral authority. Watch the video play to learn more about our mission.
             </Typography>
             <div variant="h6" style={{position:'relative', marginTop:15, textAlign:"center"}}>
-                <video id="missionVideo"  style={{maxWidth: 700, width:"100vw", }} controls playsInline poster="https://drive.google.com/uc?export=download&id=1WCnUMVrPJKOlJ-fubHj-8taSQ32Ce92d">
-                    <source src="https://www.googleapis.com/drive/v3/files/1C5Sh8-9j8RV35PksIwpedneiFKfNpLHv?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4"/>
-                    <source src="https://www.googleapis.com/drive/v3/files/1C5Sh8-9j8RV35PksIwpedneiFKfNpLHv?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
-                </video>
+                <Hidden smDown >
+                    <YouTube opts={optsLg} videoId={"AQGpnc9EoLI"} />
+                </Hidden>
+                <Hidden mdUp >
+                    <YouTube opts={optsSm} videoId={"AQGpnc9EoLI"} />
+                </Hidden>
 
-                {!isVideoPlaying && <IconButton onClick={()=>playVideo()} style={{  position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)"}} ><PlayIcon style={{ width:100,height:100}} /> </IconButton>}
             </div>
         </Container>
         <div style={{background:"#fafafa", marginTop:50, paddingTop:50, minHeight:"100vh"}}>
@@ -43,7 +64,7 @@ export default function AboutUs() {
                     <Grid item xs={12} md={6}>
                         <Paper>
                                 <div style={{padding:20}}>
-                                    <img style={{maxHeight:300}} src="/images/aiman.png" />
+                                    <div style={{width:"100%", height:320, backgroundSize:"cover", backgroundPosition:' center -20px', backgroundRepeat: "no-repeat", backgroundImage: "url(/images/aiman.png)" }} />
                                     <Typography variant="h5" style={{paddingBottom:15, marginBottom:15,borderBottom:'1px solid #eee', fontWeight:700,color:colorPallete.hurra_red_light}}>
                                         Aiman Najjar
                                     </Typography>
@@ -58,7 +79,7 @@ export default function AboutUs() {
                     <Grid item xs={12} md={6}>
                         <Paper>
                                 <div style={{padding:20}}>
-                                    <div style={{width:"100%", height:300, backgroundSize:"cover", backgroundPosition:' center -50px', backgroundImage: "url(/images/maan.jpg)" }} />
+                                    <div style={{width:"100%", height:300, backgroundSize:"cover", backgroundPosition:' center -50px', backgroundRepeat: "no-repeat", backgroundImage: "url(/images/maan.jpg)" }} />
                                     <Typography variant="h5" style={{paddingBottom:15, marginBottom:15,borderBottom:'1px solid #eee', fontWeight:700,color:colorPallete.hurra_red_light}}>
                                         Maan Najjar
                                     </Typography>

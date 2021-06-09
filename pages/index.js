@@ -15,15 +15,9 @@ export default function Home() {
 
   function playVideo(videoId) {
     setVideoPlaying(videoId)
-    if (typeof window != "undefined" && videoId == "promoVideo") {
-      setTimeout(()=> document.getElementById("videoEl").play(), 300)
-    }
   }
     
   function closeVideo() {
-    if (typeof window != "undefined" && document.getElementById("videoEl") != undefined) {
-      document.getElementById("videoEl").pause()
-    }
     setVideoPlaying(null)
   }
 
@@ -70,10 +64,7 @@ export default function Home() {
       <Modal open={videoPlaying} className={classes.centerVertical} onClick={()=>closeVideo()}>
       <div className={classes.centerHorizontal} style={{width:'100%'}}>
         {videoPlaying == "cloudRiskVideo" && <YouTube opts={opts} videoId={"F-bHm71nVzc"} />}
-        {videoPlaying == "promoVideo" &&<video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
-              <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
-              <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
-            </video>}
+        {videoPlaying == "promoVideo" &&  <YouTube opts={opts} videoId={"OTMieNx5ZRI"} />}
         </div>
       </Modal>
       {/* Section 1 */}
