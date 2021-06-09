@@ -47,13 +47,14 @@ export default function Layout({
     const drawer = (
         <div>
             <List >
-                {navItems.map( ({ text, header, divider, Icon, justIcon, id, link, color }, index) => <React.Fragment key={index}>
+                {navItems.map( ({ text, header, divider, Icon, justIcon, id, link,onClick, color }, index) => <React.Fragment key={index}>
                     {(divider || header) && index != 0 &&<Divider style={{marginLeft:15, marginRight:15, marginTop:10, backgroundColor:"rgba(0,0,0,0.04)"}}/>}
                     {!divider && <ListItem button={!header}
                         href={link}
+                        onClick={onClick}
                         component={justIcon? "li": EnhancedLink} 
                         className={classNames(classes.drawerListItem, {[classes.highlightedDrawerItem]: !header && (highlightedPage == id )})}>
-                        {Icon != null && <ListItemIcon className={classes.drawerIconWrapper}>
+                        {Icon != null && <ListItemIcon  className={classes.drawerIconWrapper}>
                                 <Icon className={classNames(classes.drawerIcon,{[classes.primaryColor]:color=="primary" })} />
                         </ListItemIcon>}
                         {!justIcon && <ListItemText className={classNames(classes.drawerItemText,{[classes.primaryColor]:color=="primary", [classes.drawerItemTextHeader]: header != null })} primary={text || header} />}

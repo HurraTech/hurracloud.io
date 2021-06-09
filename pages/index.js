@@ -1,29 +1,29 @@
-import { AppBar, Button, Card, Container, Grid, makeStyles, Modal, Paper, Toolbar, Typography } from '@material-ui/core'
+import { IconButton, Button, Card, Container, Grid, makeStyles, Modal, Paper, Toolbar, Typography, Hidden } from '@material-ui/core'
 import Head from 'next/head'
 import { useState } from 'react'
 import EnhancedLink from '../components/EnhancedLink'
 import Layout from '../components/Layout'
 import { colorPallete } from '../styles/pallete'
 import styles from '../styles/styles'
+import PlayIcon from '@material-ui/icons/PlayCircleFilled'
 
 const useStyles = makeStyles(styles)
 export default function Home() {
   const classes = useStyles()
-  const [videoPlaying,setVideoPlaying] = useState(false)
-  
-  function playVideo() {
-    setVideoPlaying(true)
+  const [videoPlaying,setVideoPlaying] = useState(null)
+
+  function playVideo(videoId) {
+    setVideoPlaying(videoId)
     if (typeof window != "undefined") {
-      setTimeout(()=> document.getElementById("promoVideo").play(), 300)
+      setTimeout(()=> document.getElementById("videoEl").play(), 300)
     }
   }
     
   function closeVideo() {
     if (typeof window != "undefined") {
-      document.getElementById("promoVideo").pause()
+      document.getElementById("videoEl").pause()
     }
-    setVideoPlaying(false)
-
+    setVideoPlaying(null)
   }
 
 
@@ -58,16 +58,23 @@ export default function Home() {
     <Layout contentMaxWidth="none">
       {/* Video Popup */}
       <Modal open={videoPlaying} className={classes.centerVertical} onClick={()=>closeVideo()}>
-        <div className={classes.centerHorizontal} style={{width:'100%'}}>
-            <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="promoVideo" preload>
+      <div className={classes.centerHorizontal} style={{width:'100%'}}>
+        {videoPlaying == "cloudRiskVideo" && <video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
               <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
               <source src="https://www.googleapis.com/drive/v3/files/1HrOSZNxc5iTtd78Q6C8LfPykiDPulWml?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
-            </video>
+            </video>}
+        {videoPlaying == "promoVideo" &&<video controls style={{maxWidth: 700, width:"100vw",boxShadow:"0px 0px 10px #333"}} id="videoEl" preload>
+              <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/mp4" />
+              <source src="https://www.googleapis.com/drive/v3/files/1vodyHsjbMUs-GQeEbpYvfDpLVSOHKktS?alt=media&key=AIzaSyDar3VRtFODPyvYhOPEQrcaJTptqQXk9Rg" type="video/webm"/>
+            </video>}
         </div>
       </Modal>
       {/* Section 1 */}
       <Container maxWidth="lg">
-        <div style={{ paddingTop: 100 }} />
+        
+        <Hidden smDown >
+          <div style={{ paddingTop: 100 }} />
+        </Hidden>
         {/* Section 1 / Desktop */}
         <div className={classes.sectionDesktop}>
           <div style={{ display: 'flex', flexDirection: 'row' }} >
@@ -82,7 +89,10 @@ export default function Home() {
                 <Button style={{flex:1,}} href="https://demo.hurracloud.io/" size="large" color="secondary" variant="contained" disableElevation>See a live demo</Button>
               </div>
             </div>
-            <img src="/images/main_scene.svg" style={{ minWidth: "40vw", minHeight: 430, maxHeight: "calc(100vh - 300px)", width: "auto" }} />
+            <div style={{position:'relative',textAlign:'center'}}>
+              <img src="/images/main_scene.svg" style={{ minWidth: "40vw", minHeight: 450, maxHeight: "calc(100vh - 300px)", width: "auto" }} />
+              <IconButton onClick={()=>playVideo("promoVideo")} style={{  position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)"}} ><PlayIcon style={{ width:100,height:100}} /> </IconButton>
+            </div>
           </div>
         </div>
         {/* End of Section 1 / Desktop */}
@@ -90,7 +100,11 @@ export default function Home() {
         {/* Section 1 / Mobile */}
         <div className={classes.sectionMobile}>
           <div style={{ display: 'flex', flexDirection: 'column', padding: '0px 10px' }}>
-            <img src="/images/main_scene.svg" style={{ height: "auto", maxWidth: "100%" }} />
+            <div style={{position:'relative',textAlign:'center'}}>
+              <img src="/images/main_scene.svg" style={{ height: "auto", maxWidth: "100%" }} />
+              <IconButton onClick={()=>playVideo("promoVideo")} style={{  position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)"}} ><PlayIcon style={{ width:100,height:100}} /> </IconButton>
+            </div>
+
             <Typography style={{ fontWeight: 800, marginTop: 25, textAlign: 'center' }} variant="h4">Decenteralizing the cloud</Typography>
             <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15, textAlign: 'center' }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
             <br /><br />
@@ -113,6 +127,7 @@ export default function Home() {
           <div className={classes.sectionDesktop}>
             <div style={{ display: 'flex', flexDirection: 'row' }} >
               <img src="/images/bedroom_scene.svg" style={{ minWidth: "40vw", minHeight: 430, maxHeight: "calc(100vh - 300px)", width: "auto" }} />
+              <Button onClick={()=>playVideo("cloudRiskVideo")} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
               <div style={{ flex: 1, paddingLeft: 90, paddingTop: 50 }} >
                 <Typography style={{ fontWeight: 700 }} variant="h5">Privacy, Security and Custody of your data, under your control</Typography>
                 <Typography style={{ fontSize: '1.15em', color: "#333", marginTop: 15 }} >
@@ -121,7 +136,7 @@ export default function Home() {
                   Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
                 </Typography>
                 <br /><br />
-                <Button onClick={playVideo} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
+                <Button onClick={()=>playVideo("cloudRiskVideo")} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
               </div>
             </div>
           </div>
@@ -138,7 +153,7 @@ export default function Home() {
                   Whether it’s your identity, name, emails, friends list, passwords or any private personal data. Hurra Cloud lets you host all your data in your home under your complete control.
               </Typography>
               <br /><br />
-              <Button onClick={playVideo} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
+              <Button onClick={()=>playVideo("cloudRiskVideo")} style={{ marginRight: 10 }} color="primary" variant="contained" disableElevation><b>WATCH:</b> &nbsp;Why traditional cloud is dangerous!</Button>
 
             </div>
           </div>
