@@ -81,10 +81,12 @@ export default function Home() {
               <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15 }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control.</Typography>
               <br /><br />
               <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <Button
+                {/* <Button
                   href="https://www.kickstarter.com/projects/hurracloud/hurracloud-your-own-private-cloud"
-                   size="large" style={{ flex:1, marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-                <Button style={{flex:1,}} href="https://demo.hurracloud.io/" size="large" color="secondary" variant="contained" disableElevation>See a live demo</Button>
+                   size="large" style={{ flex:1, marginRight: 10 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button> */}
+                <Button style={{flex:1}} color="primary" variant="contained" href="https://demo.hurracloud.io/" size="large"  disableElevation>See a live demo</Button>
+                <div style={{flex:1}} />
+
               </div>
             </div>
             <div style={{position:'relative',textAlign:'center'}}>
@@ -107,9 +109,9 @@ export default function Home() {
             <Typography style={{ fontSize: '1.45em', color: "#333", marginTop: 15, textAlign: 'center' }} >Hurra Cloud is a device you plug in your home to host all your private and personal data under your complete control</Typography>
             <br /><br />
             <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }} >
-              <Button href="https://www.kickstarter.com/projects/hurracloud/hurracloud-your-own-private-cloud"
-                size="large" style={{ marginBottom: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button>
-              <Button href="https://demo.hurracloud.io/" size="large" style={{ flex: 1 }} color="secondary" variant="contained" disableElevation>Try a live demo</Button>
+              {/* <Button href="https://www.kickstarter.com/projects/hurracloud/hurracloud-your-own-private-cloud"
+                size="large" style={{ marginBottom: 10, flex: 1 }} color="primary" variant="contained" disableElevation>Pre-order in Kickstarter</Button> */}
+              <Button href="https://demo.hurracloud.io/" size="large" style={{ flex: 1 }} color="primary" variant="contained" disableElevation>Try a live demo</Button>
             </div>
           </div>
         </div>
