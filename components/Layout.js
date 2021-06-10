@@ -38,7 +38,7 @@ export default function Layout({
         { text: 'About Us', id:"about", link:"/about" },
         { text: 'Contact Us', id:"contact", link:"mailto:contact@hurratech.com" },
         {divider:true},
-        // { text: 'Back us on Kickstarter', variant:"contained", color:"primary", id:"kickstarter", link:"https://www.kickstarter.com/projects/hurracloud/1096069573" }, 
+        { text: 'Sponsor us on Github', variant:"contained", color:"primary", id:"kickstarter", link:"https://github.com/sponsors/HurraTech" },
         { text: 'Github Repo', justIcon:true, id:"github",  Icon: GithubIcon, onClick:()=>{window.open("https://github.com/HurraTech", '_blank').focus()}},
 
     ]
