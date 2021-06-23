@@ -6,6 +6,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import GithubIcon from '@material-ui/icons/GitHub';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import FacebookIcon from '@material-ui/icons/Facebook';
+
 import Toolbar from '@material-ui/core/Toolbar';
 
 import React, { useEffect } from 'react';
@@ -40,6 +43,8 @@ export default function Layout({
         {divider:true},
         { text: 'Sponsor us on Github', variant:"contained", color:"primary", id:"kickstarter", link:"https://github.com/sponsors/HurraTech" },
         { text: 'Github Repo', justIcon:true, id:"github",  Icon: GithubIcon, onClick:()=>{window.open("https://github.com/HurraTech", '_blank').focus()}},
+        { text: 'Twitter', justIcon:true, id:"twitter",  Icon: TwitterIcon, onClick:()=>{window.open("https://twitter.com/HurraCloud", '_blank').focus()}},
+        { text: 'Facebook', justIcon:true, id:"twitter",  Icon: FacebookIcon, onClick:()=>{window.open("https://facebook.com/hurracloud/", '_blank').focus()}},
 
     ]
     
