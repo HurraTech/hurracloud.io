@@ -33,8 +33,6 @@ export default function Layout({
       setMobileOpen(!mobileOpen);
     };
 
-
-
     const navItems = [
         { text: 'Roadmap', id:"roadmap", link:"/roadmap" },
         { text: 'Ecosystem', id:"ecosystem", link:"/ecosystem" },
