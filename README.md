@@ -9,11 +9,13 @@
 
 # Exporting Static Version
 
-1- run `npx next export`
+1- Start new build `npx next build` 
 
-2- The static folder will be generated in out folder
+2- run `npx next export`
 
-3- It must be from HTTP server. To try, go to the out folder then run
+3- The static folder will be generated in out folder
+
+4- It must be from HTTP server. To try, go to the out folder then run
 `python -m SimpleHTTPServer`
 
-4- Test by opening http://localhost:8000 
+5- Test by opening http://localhost:8000 
