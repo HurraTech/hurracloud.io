@@ -8,7 +8,6 @@ import classNames from 'classnames';
 import styles from '../styles/styles';
 import { useRouter } from 'next/router';
 import { colorPallete } from '../styles/pallete';
-import Image from 'next/image'
 import EnhancedLink from './EnhancedLink';
 import ElevationScroll from './ElevationScroll'
 import { Container, CssBaseline } from '@material-ui/core';
